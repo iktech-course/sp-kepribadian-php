@@ -58,7 +58,7 @@
                     Halaman utama
                   </a>
                 </li>
-                
+
                 <li class="nav-item">
                   <a class="nav-link me-2 " style="color: black;" href="register.php">
                     <i class="fas fa-key  text-black me-1"></i>
@@ -99,17 +99,17 @@
 
                 </div>
                 <div class="card-body">
-                <div class="alertt">
+                  <div class="alertt">
                     <?php
-                        $berhasil = isset($_GET['status']) && $_GET['status'] == 'success';
-                        if($berhasil){
-                            echo '<div class="alert alert-success" role="alert" > Berhasil mendaftar akun baru</div>';
-                        }
+                    $berhasil = isset($_GET['status']) && $_GET['status'] == 'success';
+                    if ($berhasil) {
+                      echo '<div class="alert alert-success" role="alert" > Berhasil mendaftar akun baru</div>';
+                    }
                     ?>
-                </div>
+                  </div>
                   <form action="post" role="form">
-                    
-                    <div class="input-group input-group-outline mb-3" >
+
+                    <div class="input-group input-group-outline mb-3">
                       <!-- <label class="form-label">Email</label> -->
                       <input type="email" id="email" class="form-control" style="border-color: black;" placeholder="E-mail">
                     </div>
@@ -144,54 +144,54 @@
   <script>
     //fungsi show password
     function showPass() {
-        let show = document.getElementById("password");
-        if (show.type === "password") {
-            show.type = "text";
-        } else {
-            show.type = "password";
-        }
+      let show = document.getElementById("password");
+      if (show.type === "password") {
+        show.type = "text";
+      } else {
+        show.type = "password";
+      }
     }
   </script>
-      <script>
-        //fungsi show password
-        function showPass() {
-            let show = document.getElementById("password");
-            if (show.type === "password") {
-                show.type = "text";
-            } else {
-                show.type = "password";
-            }
-        }
+  <script>
+    //fungsi show password
+    function showPass() {
+      let show = document.getElementById("password");
+      if (show.type === "password") {
+        show.type = "text";
+      } else {
+        show.type = "password";
+      }
+    }
 
-        //get data login
-        $('#login').click(function(e){
-            e.preventDefault()
-            let email = $('#email').val();
-            let password = $('#password').val();
+    //get data login
+    $('#login').click(function(e) {
+      e.preventDefault()
+      let email = $('#email').val();
+      let password = $('#password').val();
 
-            $.ajax({
-                method : 'post',
-                url : '../action/proses.php',
-                data : {
-                    email : email,
-                    password : password
-                },
-                success : function(data, status){
-                    // alert(data);
-                    if(data == 'success'){
-                        window.location.replace("../index.php");
-                    }else if(data == 'successA'){
-                        window.location.replace("../admin/penyakit.php");
-                    } else {
-                        let alert = `<div class="alert alert-danger" role="alert" > Gagal login, masukan email dan password yang benar
+      $.ajax({
+        method: 'post',
+        url: '../action/proses.php',
+        data: {
+          email: email,
+          password: password
+        },
+        success: function(data, status) {
+          // alert(data);
+          if (data == 'success') {
+            window.location.replace("../index.php");
+          } else if (data == 'successA') {
+            window.location.replace("../admin/index.php?page=beranda");
+          } else {
+            let alert = `<div class="alert alert-danger" role="alert" > Gagal login, masukan email dan password yang benar
                     
                     </div>  `;
-                        $('.alertt').html(alert)
-                    }
-                }
-            })
-        })
-    </script>
+            $('.alertt').html(alert)
+          }
+        }
+      })
+    })
+  </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
