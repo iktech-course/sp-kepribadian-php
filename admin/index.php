@@ -51,8 +51,20 @@ session_start();
                         } else  if ($_GET['page'] == 'rule-list') {
                             include('page/rule-list.php');
                         } else  if ($_GET['page'] == 'user-list') {
-                            include('page/user-list.php');
+                            include('page/ciri-list.php');
                         }
+                        else  if ($_GET['page'] == 'ciri-add') {
+                            include('page/ciri-add.php');
+                        }
+                        else  if ($_GET['page'] == 'kepribadian-add') {
+                            include('page/kepribadian-add.php');
+                        }
+                        else  if ($_GET['page'] == 'rule-add') {
+                            include('page/rule-add.php');
+                        }
+                        else  if ($_GET['page'] == 'user-add') {
+                            include('page/user-add.php');
+                        }            
                         // TODO
                         // Sejauh ini sudah benar
                         // Tolong Tambahkan lagi else if untuk menuju halaman add !!!!
