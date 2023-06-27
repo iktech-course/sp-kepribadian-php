@@ -52,7 +52,11 @@ session_start();
                             include('page/rule-list.php');
                         } else  if ($_GET['page'] == 'user-list') {
                             include('page/user-list.php');
-                        } else {
+                        }
+                        // TODO
+                        // Sejauh ini sudah benar
+                        // Tolong Tambahkan lagi else if untuk menuju halaman add !!!!
+                        else {
                             include('page/beranda.php');
                         }
                     }
