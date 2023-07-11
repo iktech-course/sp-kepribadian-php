@@ -1,4 +1,12 @@
 <?php
+$id_data = $_GET['id_data'];
+
+include('../db/db_conn.php');
+$result = mysqli_query($conn, "SELECT * FROM tbl_aturan WHERE id_aturan ='" . $_GET['id_data'] . "'");
+$rule = mysqli_fetch_array($result);
+?>
+
+<?php
 
 
 include("../db/db_conn.php");

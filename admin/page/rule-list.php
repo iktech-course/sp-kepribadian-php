@@ -5,7 +5,7 @@
     </div>
 
     <div class="mb-3">
-      <a href="" class="btn btn-success">Tambah</a>
+      <a href="index.php?page=rule-add" class="btn btn-success">Tambah</a>
     </div>
 
     <!-- DataTales Example -->
@@ -19,26 +19,35 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>Kode Rule</th>
-                <th>Nama Rule</th>
+                <th>id penyakit</th>
+                <th>id gejala</th>
                 <th>Aksi</th>
 
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>C1</td>
-                <td>Ramah</td>
-                <td>
-                  <div class="" row m-2">
-                    <a href="#" class="btn btn-warning mr-2">Edit</a>
-                    <a href="#" class="btn btn-danger">Hapus</a>
-                  </div>
-                </td>
-              </tr>
+              <?php
+              include('../db/db_conn.php');
+              $no = 1;
+              $query = mysqli_query($conn, "SELECT * FROM tbl_aturan");
+              while ($data = mysqli_fetch_array($query)) {
 
+              ?>
+                <tr>
+                  <td><?= $no++ ?></td>
+                  <td> <?= $data['id_penyakit'] ?></td>
+                  <td><?= $data['id_gejala'] ?></td>
+                  <td>
+                    <div class="row m-2">
+                      <a href="index.php?page=rule-edit&&id_data=<?= $data['id_aturan'] ?> " class="btn btn-warning mr-2">Edit</a>
+                      <a href="#" class="btn btn-danger">Hapus</a>
+                    </div>
+                  </td>
+                </tr>
+              <?php
+              }
+              ?>
             </tbody>
           </table>
         </div>

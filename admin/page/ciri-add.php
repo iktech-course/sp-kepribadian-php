@@ -12,14 +12,14 @@
          <h6 class="m-0 font-weight-bold text-primary">Form Input Ciri-Ciri</h6>
        </div>
        <div class="card-body">
-         <form action="#" method="post">
+         <form action="action/CiriTambah.php" method="post">
            <div class="form-group">
              <label for="" class="form-label">Kode ciri-ciri</label>
-             <input type="text" name="kode_ciri-ciri" id="" class="form-control" placeholder="Masukkan id ciri-ciri">
+             <input type="text" name="kode-ciri" id="" class="form-control" placeholder="Masukkan id ciri-ciri">
            </div>
            <div class="form-group">
              <label for="" class="form-label">Nama Ciri Ciri</label>
-             <input type="text" name="nama_ciri-ciri" id="" class="form-control" placeholder="Masukkan nama ciri-ciri">
+             <input type="text" name="nama-ciri" id="" class="form-control" placeholder="Masukkan nama ciri-ciri">
            </div>
            <button type="submit" class="btn btn-success">SIMPAN</button>
          </form>
