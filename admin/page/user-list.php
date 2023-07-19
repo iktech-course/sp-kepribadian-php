@@ -49,8 +49,8 @@
                 </td>
                 <td>
                   <div class="row m-2">
-                    <a href="#" class="btn btn-warning mr-2">Edit</a>
-                    <a href="#" class="btn btn-danger">Hapus</a>
+                    <a href="index.php?page=user-edit&&id_data=<?= $data['user_id'] ?>" class="btn btn-warning mr-2">Edit</a>
+                    <a href="action/UserHapus.php?id_data=<?= $data['user_id'] ?>" class="btn btn-danger">Hapus</a>
                   </div>
                 </td>
               </tr>

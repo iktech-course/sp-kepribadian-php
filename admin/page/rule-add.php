@@ -3,16 +3,16 @@
 
 include("../db/db_conn.php");
 
-$result = mysqli_query($conn, "SELECT * FROM tbl_penyakit");
+$result = mysqli_query($conn, "SELECT * FROM tbl_kepribadian");
 
 while ($p = mysqli_fetch_array($result)) {
-  $penyakit[] = $p;
+  $kepribadian[] = $p;
 }
 
-$resultG = mysqli_query($conn, "SELECT * FROM tbl_gejala");
+$resultG = mysqli_query($conn, "SELECT * FROM tbl_ciri");
 
 while ($g = mysqli_fetch_array($resultG)) {
-  $gejala[] = $g;
+  $ciri[] = $g;
 }
 
 ?>
@@ -37,9 +37,9 @@ while ($g = mysqli_fetch_array($resultG)) {
         <select name="kode_gejala" id="" class="form-control">
           <option value="">Piih Ciri-Ciri</option>
           <?php
-          foreach ($gejala as $gejala_item) {
+          foreach ($ciri as $ciri_item) {
           ?>
-            <option value="<?= $gejala_item['id_gejala'] ?>"><?= $gejala_item['name'] ?></option>
+            <option value="<?= $ciri_item['id_ciri'] ?>"><?= $ciri_item['name'] ?></option>
           <?php
           }
           ?>
@@ -50,9 +50,9 @@ while ($g = mysqli_fetch_array($resultG)) {
         <select name="kode_penyakit" id="" class="form-control">
           <option value="">Piih Kepribadian</option>
           <?php
-          foreach ($penyakit as $penyakit_item) {
+          foreach ($kepribadian as $kepribadian_item) {
           ?>
-            <option value="<?= $penyakit_item['id_penyakit'] ?>"><?= $penyakit_item['name'] ?></option>
+            <option value="<?= $kepribadian_item['id_kepribadian'] ?>"><?= $kepribadian_item['name'] ?></option>
           <?php
           }
           ?>

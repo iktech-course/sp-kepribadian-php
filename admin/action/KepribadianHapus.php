@@ -1,16 +1,13 @@
 <?php
 
-$id = $_GET['id'];
+$id = $_GET['id_data'];
 
 include("../../db/db_conn.php");
 
-$hapus = mysqli_query($conn, "DELETE FROM tbl_penyakit WHERE id_penyakit = '$id'");
+$hapus = mysqli_query($conn, "DELETE FROM tbl_kepribadian WHERE id_kepribadian = '$id'");
 
-if($hapus){
-    header("location: ../penyakit.php?hapus=success");
-}else {
-    header("location: ../penyakit.php?hapus=gagal");
-
+if ($hapus) {
+    header("location: ../index.php?page=kepribadian-list");
+} else {
+    echo "Data gagal disimpan";
 }
-
-?>

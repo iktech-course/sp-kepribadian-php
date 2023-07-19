@@ -2,7 +2,7 @@
 $id_data = $_GET['id_data'];
 
 include('../db/db_conn.php');
-$result = mysqli_query($conn, "SELECT * FROM tbl_gejala WHERE id_gejala ='" . $_GET['id_data'] . "'");
+$result = mysqli_query($conn, "SELECT * FROM tbl_ciri WHERE id_ciri ='" . $_GET['id_data'] . "'");
 $gejala = mysqli_fetch_array($result);
 ?>
 
@@ -23,13 +23,13 @@ $gejala = mysqli_fetch_array($result);
     <form action="action/CiriEdit.php" method="post">
       <div class="form-group">
         <label for="" class="form-label">Kode ciri-ciri</label>
-        <input type="text" name="kode-ciri" id="" value="<?= $gejala['id_gejala'] ?>" class="form-control" placeholder="Masukkan id ciri-ciri">
+        <input type="text" name="kode-ciri" id="" value="<?= $gejala['id_ciri'] ?>" class="form-control" placeholder="Masukkan id ciri-ciri">
       </div>
       <div class="form-group">
         <label for="" class="form-label">Nama Ciri Ciri</label>
         <input type="text" name="nama-ciri" value="<?= $gejala['name'] ?>" id="" class="form-control" placeholder="Masukkan nama ciri-ciri">
       </div>
-      <button type="submit" class="btn btn-success">SIMPAN</button>
+      <button type="submit" class="btn btn-success">Update</button>
     </form>
   </div>
 </div>

@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <!-- <link rel="icon" type="image/png" href="../assets/img/favicon.png"> -->
   <title>
-    Masuk akun StomachHeal
+    Masuk akun Sistem Pakar Kepribadian
   </title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.19.0/dist/full.css" rel="stylesheet" type="text/css" />
 
@@ -38,10 +38,10 @@
     <div class="row">
       <div class="col-12">
         <!-- Navbar -->
-        <nav class="navbar bg-primary navbar-expand-lg  border-radius-lg top-0 z-index-3  mt-4 py-2 start-0 end-0 mx-4">
+        <nav class="navbar bg-info navbar-expand-lg  border-radius-lg top-0 z-index-3  mt-4 py-2 start-0 end-0 mx-4">
           <div class="container-fluid ps-2 pe-0">
-            <a class=" font-weight-bolder text-black ms-lg-0 ms-3 me-5" href="../pages/dashboard.html">
-              StomachHeal
+            <a class=" font-weight-bolder text-white ms-lg-0 ms-3 me-5" href="../pages/dashboard.html">
+              Sistem Pakar Kepribadian
             </a>
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon mt-2">
@@ -88,7 +88,7 @@
         <div class="container">
           <div class="row">
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 start-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/img/illustrations/illustration-signup3.png'); background-size: cover;">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center" style="background-image: url('../assets/bg_login.jpg'); background-size: cover;">
               </div>
             </div>
             <div class="col-xl-4 col-lg-5 col-md-7 d-flex flex-column ms-auto me-auto ms-lg-auto me-lg-5">

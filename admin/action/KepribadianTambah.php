@@ -7,7 +7,7 @@ $solusi = $_POST['solusi'];
 
 include("../../db/db_conn.php");
 
-$tambah = mysqli_query($conn, "INSERT INTO tbl_penyakit(id_penyakit, name, solusi) VALUES('$id','$nama','$solusi')");
+$tambah = mysqli_query($conn, "INSERT INTO tbl_kepribadian(id_kepribadian, name, solusi) VALUES('$id','$nama','$solusi')");
 
 
 if ($tambah) {

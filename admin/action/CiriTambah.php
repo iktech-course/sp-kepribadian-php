@@ -5,7 +5,7 @@ $nama = $_POST['nama-ciri'];
 
 include("../../db/db_conn.php");
 
-$tambah = mysqli_query($conn, "INSERT INTO tbl_gejala(id_gejala, name) VALUES('$id','$nama')");
+$tambah = mysqli_query($conn, "INSERT INTO tbl_ciri(id_ciri, name) VALUES('$id','$nama')");
 
 
 if ($tambah) {

@@ -29,18 +29,18 @@
           <?php
           include('../db/db_conn.php');
           $no = 1;
-          $query = mysqli_query($conn, "SELECT * FROM tbl_gejala");
+          $query = mysqli_query($conn, "SELECT * FROM tbl_ciri");
           while ($data = mysqli_fetch_array($query)) {
 
           ?>
             <tr>
               <td><?= $no++ ?></td>
-              <td> <?= $data['id_gejala'] ?></td>
+              <td> <?= $data['id_ciri'] ?></td>
               <td><?= $data['name'] ?></td>
               <td>
                 <div class="row m-2">
-                  <a href="index.php?page=ciri-edit&&id_data=<?= $data['id_gejala'] ?>" class="btn btn-warning mr-2">Edit</a>
-                  <a href="#" class="btn btn-danger">Hapus</a>
+                  <a href="index.php?page=ciri-edit&&id_data=<?= $data['id_ciri'] ?>" class="btn btn-warning mr-2">Edit</a>
+                  <a href="action/CiriHapus.php?id_data=<?= $data['id_ciri'] ?>" class="btn btn-danger">Hapus</a>
                 </div>
               </td>
 

@@ -16,5 +16,3 @@ if($save){
 }else {
     echo "gagal simpan data";
 }
-
-?>

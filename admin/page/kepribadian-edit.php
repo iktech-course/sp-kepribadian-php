@@ -2,12 +2,12 @@
 $id_data = $_GET['id_data'];
 
 include('../db/db_conn.php');
-$result = mysqli_query($conn, "SELECT * FROM tbl_penyakit WHERE id_penyakit ='" . $_GET['id_data'] . "'");
+$result = mysqli_query($conn, "SELECT * FROM tbl_kepribadian WHERE id_kepribadian ='" . $_GET['id_data'] . "'");
 $kepribadian = mysqli_fetch_array($result);
 ?>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Tambah Kepribadian</h1>
+  <h1 class="h3 mb-0 text-gray-800">Edit Kepribadian</h1>
 
 </div>
 
@@ -22,7 +22,7 @@ $kepribadian = mysqli_fetch_array($result);
     <form action="action/KepribadianEdit.php" method="post">
       <div class="form-group">
         <label for="" class="form-label">Kode Kepribadian</label>
-        <input type="text" name="kode-kepribadian" value="<?= $kepribadian['id_penyakit'] ?>" id="" class="form-control" placeholder="Masukkan kode kepribadian">
+        <input type="text" name="kode-kepribadian" value="<?= $kepribadian['id_kepribadian'] ?>" id="" class="form-control" placeholder="Masukkan kode kepribadian">
       </div>
       <div class="form-group">
         <label for="" class="form-label">Nama Kepribadian</label>

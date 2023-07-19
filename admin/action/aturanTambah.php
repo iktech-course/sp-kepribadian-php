@@ -1,11 +1,11 @@
 <?php
 
-$id_penyakit = $_POST['kode_penyakit'];
-$id_gejala = $_POST['kode_gejala'];
+$id_kepribadian = $_POST['kode_kepribadian'];
+$id_ciri = $_POST['kode_ciri'];
 
 include("../../db/db_conn.php");
 
-$tambah = mysqli_query($conn, "INSERT INTO tbl_aturan(id_penyakit, id_gejala) VALUES('$id_penyakit','$id_gejala')");
+$tambah = mysqli_query($conn, "INSERT INTO tbl_aturan(id_kepribadian, id_ciri) VALUES('$id_kepribadian','$id_ciri')");
 
 
 if ($tambah) {

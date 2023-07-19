@@ -19,8 +19,8 @@
             <thead>
               <tr>
                 <th>No</th>
-                <th>id penyakit</th>
-                <th>id gejala</th>
+                <th>id Kepribadian</th>
+                <th>id Ciri</th>
                 <th>Aksi</th>
 
               </tr>
@@ -36,12 +36,12 @@
               ?>
                 <tr>
                   <td><?= $no++ ?></td>
-                  <td> <?= $data['id_penyakit'] ?></td>
-                  <td><?= $data['id_gejala'] ?></td>
+                  <td> <?= $data['id_kepribadian'] ?></td>
+                  <td><?= $data['id_ciri'] ?></td>
                   <td>
                     <div class="row m-2">
-                      <a href="index.php?page=rule-edit&&id_data=<?= $data['id_aturan'] ?> " class="btn btn-warning mr-2">Edit</a>
-                      <a href="#" class="btn btn-danger">Hapus</a>
+
+                      <a href="action/aturanHapus.php?id_data=<?= $data['id_aturan'] ?>" class="btn btn-danger">Hapus</a>
                     </div>
                   </td>
                 </tr>
