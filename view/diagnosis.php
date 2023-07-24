@@ -154,14 +154,14 @@ $lastId = $lastId['id_riwayat'] + 1;
 
                 $('#question').html(isi);
 
-                $('#yes').val(date.id_gejala)
-                $('#no').val(date.id_gejala)
+                $('#yes').val(date.id_ciri)
+                $('#no').val(date.id_ciri)
             }
         })
 
         //record data gejala
-        let arrGejala = [];
-        let getQuery = JSON.stringify('SELECT * FROM tbl_aturan WHERE id_penyakit IN(SELECT id_kepribadian FROM tbl_aturan)');
+        let arrGejala=[];
+        let getQuery = JSON.stringify('SELECT * FROM tbl_aturan WHERE id_kepribadian IN(SELECT id_kepribadian FROM tbl_aturan)');
         //menentukan pertanyaan ke berapa
         let pertanyaanKe = 0;
         $('#yes').click(function() {
@@ -193,8 +193,8 @@ $lastId = $lastId['id_riwayat'] + 1;
                     } else {
                         $('#question').html(isi);
 
-                        $('#yes').val(date.data.id_gejala)
-                        $('#no').val(date.data.id_gejala)
+                        $('#yes').val(date.data.id_ciri)
+                        $('#no').val(date.data.id_ciri)
 
                         //ubah value sub query
                         getQuery = JSON.stringify(date.qry);
@@ -234,8 +234,8 @@ $lastId = $lastId['id_riwayat'] + 1;
                     } else {
                         $('#question').html(isi);
 
-                        $('#yes').val(date.data.id_gejala)
-                        $('#no').val(date.data.id_gejala)
+                        $('#yes').val(date.data.id_ciri)
+                        $('#no').val(date.data.id_ciri)
 
                         //ubah value sub query
                         getQuery = JSON.stringify(date.qry);

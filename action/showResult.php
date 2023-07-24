@@ -37,7 +37,7 @@ if(isset($arrGejala)){
         //handle penyakit sudah ketemu
         if(count($getData)==1){
             //insert data ke riwayat
-            mysqli_query($conn, 'insert into tbl_riwayat(id_user, id_penyakit, created_at) VALUES("'.$idUser.'","'.$getData[0]['id_penyakit'].'",NOW())');
+            mysqli_query($conn, 'insert into tbl_riwayat(id_user, id_kepribadian, created_at) VALUES("'.$idUser.'","'.$getData[0]['id_kepribadian'].'",NOW())');
 
             //memasukan nama gejala
             mysqli_query($conn,'SELECT * FROM `tbl_ciri` WHERE id_ciri IN ("G001", "G002")');

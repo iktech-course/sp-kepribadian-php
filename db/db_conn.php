@@ -1,5 +1,5 @@
 <?php 
-$conn = mysqli_connect("localhost","root","","sp_kepribadian");
+$conn = mysqli_connect("localhost","root","","db_sp_kepribadian");
  
 // Check connection
 if (mysqli_connect_errno()){

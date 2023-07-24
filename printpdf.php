@@ -17,11 +17,11 @@ $gabungan = $penyakit.$idUser.$lastId;
 $kodelaporan = md5($gabungan);
 
 //query data penyakit
-$dataP = mysqli_query($conn, "SELECT * FROM tbl_penyakit WHERE name = '".$penyakit."'");
+$dataP = mysqli_query($conn, "SELECT * FROM tbl_kepribadian WHERE name = '".$penyakit."'");
 $dataPenyakit = mysqli_fetch_array($dataP);
 
 //dapatkan data gejala
-$dataG = mysqli_query($conn, "SELECT NAME FROM tbl_gejala WHERE id_gejala IN(SELECT id_gejala FROM `tbl_aturan` WHERE id_penyakit = '".$dataPenyakit['id_penyakit']."')");
+$dataG = mysqli_query($conn, "SELECT NAME FROM tbl_ciri WHERE id_ciri IN(SELECT id_ciri FROM `tbl_aturan` WHERE id_kepribadian = '".$dataPenyakit['id_kepribadian']."')");
 while($g=mysqli_fetch_array($dataG)){
     $dataGejala[] = $g;
 }
@@ -58,7 +58,7 @@ if(empty($dataUser['tanggal_lahir'])){
 
 $html = '    <div style="margin: auto ;max-width:400px" >
 <h2 style="text-align: center ;" >LAPORAN HASIL DIAGNOSA</h2>
-<p style="text-align:center ;" >SISTEM PAKAR DIAGNOSA PENYAKIT LAMBUNG</p>
+<p style="text-align:center ;" >SISTEM PAKAR KEPRIBADIAN</p>
 <hr>
 <div style="margin: 30px ;" >
     <h3>Identitas</h3>
@@ -80,19 +80,16 @@ $html = '    <div style="margin: auto ;max-width:400px" >
         </tr>
     </table>
 
-    <h3>Gejala yang dialami</h3>
+    <h3>Ciri - Ciri yang dialami</h3>
     - '.$gabungGJ.'
     
 
-    <h4>Pasien didagnosa mengalami penyakit '.$dataPenyakit['name'].'</h4>
+    <h4>Anda Memiliki Jenis Kepribadian '.$dataPenyakit['name'].'</h4>
 
     <hr>
 
-    <h3>Solusi</h3>
+    <h3>Saran Profesi</h3>
     <p>'.$dataPenyakit['solusi'].'</p>
-
-    <h3>Langkah Pencegahan</h3>
-    <p>'.$dataPenyakit['langkah_pencegahan'].'</p>
 
 </div>
 </div>

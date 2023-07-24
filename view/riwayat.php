@@ -89,7 +89,7 @@ if (!isset($_SESSION['status'])) {
                                 <div class="overflow-hidden">
 
                                     <?php
-                                    $query = "SELECT tbl_riwayat.id_penyakit, tbl_riwayat.created_at, tbl_penyakit.name FROM tbl_riwayat,tbl_penyakit WHERE tbl_riwayat.id_penyakit=tbl_penyakit.id_penyakit AND tbl_riwayat.id_user=" . $_SESSION['id_user'] . " ORDER BY id_riwayat desc LIMIT 0,8";
+                                    $query = "SELECT tbl_riwayat.id_kepribadian, tbl_riwayat.created_at, tbl_kepribadian.name FROM tbl_riwayat,tbl_kepribadian WHERE tbl_riwayat.id_kepribadian=tbl_kepribadian.id_kepribadian AND tbl_riwayat.id_user=" . $_SESSION['id_user'] . " ORDER BY id_riwayat desc LIMIT 0,8";
                                     $result = mysqli_query($conn, $query);
 
                                     while ($p = mysqli_fetch_array($result)) {
@@ -131,7 +131,7 @@ if (!isset($_SESSION['status'])) {
                                                         </td>
                                                         <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
 
-                                                            <label for="my-modal-6" id="lihat<?= $data['id_penyakit'] ?>" value="<?= $data['id_penyakit'] ?>" class="lihat btn modal-button">lihat</label>
+                                                            <label for="my-modal-6" id="lihat<?= $data['id_kepribadian'] ?>" value="<?= $data['id_kepribadian'] ?>" class="lihat btn modal-button">lihat</label>
                                                         </td>
                                                     </tr>
                                                 <?php endforeach ?>
@@ -164,7 +164,7 @@ if (!isset($_SESSION['status'])) {
             <div class=" ">
                 <div class="grid grid-cols-2 gap-0">
                     <div class="">
-                        <label class="my-5" for="">Penyakit</label>
+                        <label class="my-5" for="">Kepribadian</label>
                     </div>
                     <div class="">
                         <label class="my-5" for="" id="npenyakit"></label>
@@ -172,7 +172,7 @@ if (!isset($_SESSION['status'])) {
                 </div>
                 <div class="grid grid-cols-2 gap-0">
                     <div class="mt-5">
-                        <label class="my-5" for="">Gejala</label>
+                        <label class="my-5" for="">Ciri - Ciri</label>
                     </div>
                     <div class="mt-5">
                         <label for="" class="my-5" id="ngejala"> </label>
@@ -180,18 +180,10 @@ if (!isset($_SESSION['status'])) {
                 </div>
                 <div class="grid grid-cols-2 gap-0">
                     <div class="mt-5">
-                        <label class="my-5" for="">Solusi</label>
+                        <label class="my-5" for="">Saran Profesi</label>
                     </div>
                     <div class="mt-5">
                         <label class="my-5" for="" id="nsolusi"></label>
-                    </div>
-                </div>
-                <div class="grid grid-cols-2 gap-0">
-                    <div class="mt-5">
-                        <label class="my-5" for="">Langkah Pencegahan</label>
-                    </div>
-                    <div class="mt-5">
-                        <label class="my-5" for="" id="npencegahan"></label>
                     </div>
                 </div>
 

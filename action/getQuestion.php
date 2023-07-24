@@ -12,19 +12,19 @@ $statusPilihan = $_POST['status'];
 
 if(!isset($getQuery)){
     // melakukan filter sesuai dengan yang sudah di input
-    $qry = 'SELECT * FROM tbl_aturan WHERE id_penyakit IN(SELECT id_penyakit FROM `tbl_aturan`) GROUP BY id_gejala';
+    $qry = 'SELECT * FROM tbl_aturan WHERE id_kepribadian IN(SELECT id_kepribadian FROM `tbl_aturan`) GROUP BY id_ciri';
 }else{
     // melakukan cek pertanyaan dijawab ya atau tidak untuk menentukan pertanyaan selanutnya
     if($statusPilihan =='yes'){
-        $qry = 'SELECT * FROM('.$getQuery.') AS tb'.$id_gejala.' WHERE id_penyakit IN(SELECT id_penyakit FROM tbl_aturan WHERE id_gejala = "'.$id_gejala.'")';
+        $qry = 'SELECT * FROM('.$getQuery.') AS tb'.$id_gejala.' WHERE id_kepribadian IN(SELECT id_kepribadian FROM tbl_aturan WHERE id_ciri = "'.$id_gejala.'")';
 
         //bungkus group by
-        $qryGB = 'SELECT id_gejala FROM('.$qry.') AS tb'.$id_gejala .'cp WHERE id_penyakit IN(SELECT id_penyakit FROM tbl_aturan WHERE id_gejala = "'.$id_gejala.'") GROUP BY id_gejala';
+        $qryGB = 'SELECT id_ciri FROM('.$qry.') AS tb'.$id_gejala .'cp WHERE id_kepribadian IN(SELECT id_kepribadian FROM tbl_aturan WHERE id_ciri = "'.$id_gejala.'") GROUP BY id_ciri';
     }else {
-        $qry = 'SELECT * FROM('.$getQuery.') AS tb'.$id_gejala.' WHERE id_gejala IN (SELECT id_gejala FROM tbl_aturan WHERE id_penyakit NOT IN (SELECT id_penyakit FROM tbl_aturan WHERE id_gejala="'.$id_gejala.'")GROUP BY id_gejala)';
+        $qry = 'SELECT * FROM('.$getQuery.') AS tb'.$id_gejala.' WHERE id_ciri IN (SELECT id_ciri FROM tbl_aturan WHERE id_kepribadian NOT IN (SELECT id_kepribadian FROM tbl_aturan WHERE id_ciri="'.$id_gejala.'")GROUP BY id_ciri)';
 
          //bungkus group by
-         $qryGB = 'SELECT id_gejala FROM('.$qry.') AS tb'.$id_gejala .'cp GROUP BY id_gejala';
+         $qryGB = 'SELECT id_ciri FROM('.$qry.') AS tb'.$id_gejala .'cp GROUP BY id_ciri';
     }
 
     // var_dump($qryGB); die;
@@ -41,13 +41,13 @@ if(isset($quest)){
 
     if($panjang_gejala<$countGejala){
         //mendapatkan id baru berdasar urutan array
-        $newId = $quest[$panjang_gejala]['id_gejala'];
+        $newId = $quest[$panjang_gejala]['id_ciri'];
 
         //handle jika penyakit sudah ditemukan atau masih cari pertanyaan
 
 
         //melakukan query pertanyaan baru 
-        $qry1 = 'SELECT * FROM tbl_gejala where id_gejala ="'.$newId.'"';
+        $qry1 = 'SELECT * FROM tbl_ciri where id_ciri ="'.$newId.'"';
         $qryNewQuest = mysqli_query($conn, $qry1);
 
         $data =[
