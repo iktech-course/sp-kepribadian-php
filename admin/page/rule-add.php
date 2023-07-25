@@ -34,7 +34,7 @@ while ($g = mysqli_fetch_array($resultG)) {
       <div class="form-group">
         <label for="" class="from-label">Ciri-Ciri</label>
         <!-- <input type="text" name=" kode_Gejala" id="" class="form-control" placeholder="Masukan Kode Gejala"> -->
-        <select name="kode_gejala" id="" class="form-control">
+        <select name="kode_ciri" id="" class="form-control">
           <option value="">Piih Ciri-Ciri</option>
           <?php
           foreach ($ciri as $ciri_item) {
@@ -47,7 +47,7 @@ while ($g = mysqli_fetch_array($resultG)) {
       </div>
       <div class="form-group">
         <label for="" class="form-label">Kepribadian</label>
-        <select name="kode_penyakit" id="" class="form-control">
+        <select name="kode_kepribadian" id="" class="form-control">
           <option value="">Piih Kepribadian</option>
           <?php
           foreach ($kepribadian as $kepribadian_item) {
