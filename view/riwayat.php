@@ -29,7 +29,7 @@ if (!isset($_SESSION['status'])) {
     <div class="h-screen bg-cover bg-no-repeat" style="background-image: url('../assets/bghome.png')">
         <div class="z-10 navbar bg-base-transparent sticky text-white">
             <div class="flex-1 ml-5">
-                <a class="btn btn-ghost normal-case text-xl" href="../index.php">stomachHeal</a>
+                <a class="btn btn-ghost normal-case text-xl" href="../index.php">Sistem Pakar Kepribadian</a>
             </div>
             <div class="flex-none mr-5">
                 <div class="navbar">
@@ -105,7 +105,7 @@ if (!isset($_SESSION['status'])) {
                                                     No
                                                 </th>
                                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-                                                    Nama Penyakit
+                                                    Nama Kepribadian
                                                 </th>
                                                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">
                                                     Tanggal

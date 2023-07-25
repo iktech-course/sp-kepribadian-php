@@ -160,7 +160,7 @@ $lastId = $lastId['id_riwayat'] + 1;
         })
 
         //record data gejala
-        let arrGejala=[];
+        let arrGejala = [];
         let getQuery = JSON.stringify('SELECT * FROM tbl_aturan WHERE id_kepribadian IN(SELECT id_kepribadian FROM tbl_aturan)');
         //menentukan pertanyaan ke berapa
         let pertanyaanKe = 0;
@@ -287,7 +287,7 @@ $lastId = $lastId['id_riwayat'] + 1;
                                                 <div class=" ">
                                                     <div class="grid grid-cols-2 gap-0" >
                                                         <div class="">
-                                                            <label class="my-5" for="">Penyakit</label>
+                                                            <label class="my-5" for="">Kepribadian</label>
                                                         </div>
                                                         <div class="">
                                                             <label class="my-5" for="" id="npenyakit">` + date.data.name + `</label>
@@ -295,7 +295,7 @@ $lastId = $lastId['id_riwayat'] + 1;
                                                     </div>
                                                     <div class="grid grid-cols-2 gap-0" >
                                                         <div class="mt-5">
-                                                            <label class="my-5" for="">Gejala</label>
+                                                            <label class="my-5" for="">Ciri - Ciri</label>
                                                         </div>
                                                         <div class="mt-5">
                                                             <label for="" class="my-5" id="ngejala">  </label>
@@ -303,7 +303,7 @@ $lastId = $lastId['id_riwayat'] + 1;
                                                     </div>
                                                     <div class="grid grid-cols-2 gap-0" >
                                                         <div class="mt-5">
-                                                            <label class="my-5" for="">Solusi</label>
+                                                            <label class="my-5" for="">Saran</label>
                                                         </div>
                                                         <div class="mt-5">
                                                             <label class="my-5" for="" id="nsolusi">` + date.data.solusi + `</label>
